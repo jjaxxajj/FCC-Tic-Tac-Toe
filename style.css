@@ -16,11 +16,7 @@ body {
     line-height: 45px;
 }
 
-/* td {
-    border: 2px solid #000;
-} */
-
-input[type=text], .testing {
+input[type="text"] {
     display: inline-block;
     width: 30%;
     height: 30%;
@@ -28,8 +24,5 @@ input[type=text], .testing {
     font-size: 8em;
     text-align: center;
     border: 1px solid black;
-}
-
-.testing {
-    border: red 2px solid;
+    cursor: pointer;
 }
