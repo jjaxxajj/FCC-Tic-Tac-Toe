@@ -1,0 +1,35 @@
+body {
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    line-height: 0;
+}
+
+.container {
+    /* border: 2px solid #000; */
+    margin: 0 auto;
+    position: relative;
+    top: 100px;
+    width: 400px;
+    height: 400px;
+    text-align: center;
+    /* table-layout: fixed; */
+    line-height: 45px;
+}
+
+/* td {
+    border: 2px solid #000;
+} */
+
+input[type=text], .testing {
+    display: inline-block;
+    width: 30%;
+    height: 30%;
+    padding: 0;
+    font-size: 8em;
+    text-align: center;
+    border: 1px solid black;
+}
+
+.testing {
+    border: red 2px solid;
+}
