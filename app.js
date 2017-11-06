@@ -5,34 +5,58 @@ $(document).ready(function(){
     var board = $(".board");
     var radioValue = $("input[name=playerValue]:checked");
     var setUp = $(".setUp");
-
-    var random=Math.floor(Math.random() * 9) + 1;
-    console.log(random);
-
-
+    
     startBtn.click(pickSign);
-
     $("input[type=text]").click(play);
+
+
+    // FUNCTIONS
 
     function play(){
         var id = $(`#${this.id}`);
-        
-        if (player == user) {
-            player = bot;
-        } else {
-            player = user;
+        var random = Math.floor(Math.random() * 9) + 1;
+        var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+        if (user == "X") {
+            bot = "O";
+            id.val(user).attr("disabled", true);
+            $(`#${random}`).val(bot).attr("disabled", true);
+            console.log($(`#${random}`).val("O").attr("disabled", true));
+        } else if (user=="O") {
+            bot = "X";
+            $(`#${random}`).val(bot).attr("disabled", true);
+            id.val(user);
+            console.log($(`#${random}`).val("X").attr("disabled", true));
         }
 
+        /*  if (player == user) {
+                       console.log("User turn");
+                       player = bot;
+                   } else {
+                       $(`#${random}`).val(bot);
+                       console.log("bot turn");
+                       
+                       player = user;
+                   }
+        
         id.val(player);
-        id.attr("disabled", true);
+        id.attr("disabled", true); */
 
         win();
+
+
+    }
+
+    function pause() {
+        
     }
 
     function pickSign() {
         user = $("input[name=playerValue]:checked").val();
 
-        console.log(user);
+        // if user is X, user goes first. if bot is X, bot goes first
+
+
         if (user == "X") {
             bot = "O";
             user="X";
@@ -40,6 +64,7 @@ $(document).ready(function(){
             bot = "X";
             user="O";
         }
+
         setUp.fadeOut(100);
         setTimeout(function(){
             board.fadeIn(500);

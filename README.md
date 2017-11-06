@@ -9,4 +9,5 @@
 * Change color of winning line
 * Prevent user from winning
 * Get rid of text input blinker when player clicks box
-* Activate bot
+* ~~Activate bot~~
+* disable input box after it's been filled
