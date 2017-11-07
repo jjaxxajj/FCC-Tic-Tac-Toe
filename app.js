@@ -1,137 +1,129 @@
-$(document).ready(function(){
+$(document).ready(function () {
     var user, bot;
     var player;
     var startBtn = $("#startBtn");
     var board = $(".board");
     var radioValue = $("input[name=playerValue]:checked");
     var setUp = $(".setUp");
-    
+    var arr = ["a", "b", "c", "d", "e", "f", "g", "h", "i"];
+
     startBtn.click(pickSign);
     $("input[type=text]").click(play);
 
 
     // FUNCTIONS
 
-    function play(){
+    function play() {
         var id = $(`#${this.id}`);
-        var random = Math.floor(Math.random() * 9) + 1;
-        var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+        var random = Math.floor(Math.random() * arr.length) + 1;
 
         if (user == "X") {
             bot = "O";
+
+            let uIndex = arr.indexOf(this.id);
             id.val(user).attr("disabled", true);
-            $(`#${random}`).val(bot).attr("disabled", true);
-            console.log($(`#${random}`).val("O").attr("disabled", true));
-        } else if (user=="O") {
+            arr.splice(uIndex, 1);
+
+
+            setTimeout(function(){
+                $(`#${arr[random]}`).val(bot).attr("disabled", true);
+                if (arr[random]==undefined) {
+                    random = Math.floor(Math.random() * arr.length-1) + 1;
+                    $(`#${arr[random]}`).val(bot).attr("disabled", true);
+                    
+                }
+                let bIndex = arr.indexOf(arr[random]);
+                arr.splice(bIndex, 1);
+            }, 500);
+
+        } else if (user == "O") {
             bot = "X";
             $(`#${random}`).val(bot).attr("disabled", true);
             id.val(user);
             console.log($(`#${random}`).val("X").attr("disabled", true));
         }
 
-        /*  if (player == user) {
-                       console.log("User turn");
-                       player = bot;
-                   } else {
-                       $(`#${random}`).val(bot);
-                       console.log("bot turn");
-                       
-                       player = user;
-                   }
-        
-        id.val(player);
-        id.attr("disabled", true); */
-
         win();
 
-
-    }
-
-    function pause() {
-        
     }
 
     function pickSign() {
         user = $("input[name=playerValue]:checked").val();
 
-        // if user is X, user goes first. if bot is X, bot goes first
-
-
         if (user == "X") {
             bot = "O";
-            user="X";
+            user = "X";
         } else {
             bot = "X";
-            user="O";
+            user = "O";
         }
 
         setUp.fadeOut(100);
-        setTimeout(function(){
+        setTimeout(function () {
             board.fadeIn(500);
-        },200);
-        
+        }, 200);
+
     }
 
     function win(player) {
         // rows
-        
-            if ($("#1").val() === "X" && $("#2").val() === "X" && $("#3").val() === "X") {
-                console.log("X WIN");
-                gameOver();
-            } else if ($("#1").val() === "O" && $("#2").val() === "O" && $("#3").val() === "O") {
-                console.log("O WIN");
-                gameOver();
-            } else if ($("#4").val() === "X" && $("#5").val() === "X" && $("#6").val() === "X") {
-                console.log("X WIN");
-                gameOver();
-            } else if ($("#4").val() === "O" && $("#5").val() === "O" && $("#6").val() === "O") {
-                console.log("O WIN");
-                gameOver();
-            } else if ($("#7").val() === "X" && $("#8").val() === "X" && $("#9").val() === "X") {
-                console.log("X WIN");
-                gameOver();
-            } else if ($("#7").val() === "O" && $("#8").val() === "O" && $("#9").val() === "O") {
-                console.log("O WIN");
-                gameOver();
+
+        if ($("#a").val() === "X" && $("#b").val() === "X" && $("#c").val() === "X") {
+            console.log("X WIN");
+            gameOver();
+        } else if ($("#a").val() === "O" && $("#b").val() === "O" && $("#c").val() === "O") {
+            console.log("O WIN");
+            gameOver();
+        } else if ($("#d").val() === "X" && $("#e").val() === "X" && $("#f").val() === "X") {
+            console.log("X WIN");
+            gameOver();
+        } else if ($("#d").val() === "O" && $("#e").val() === "O" && $("#f").val() === "O") {
+            console.log("O WIN");
+            gameOver();
+        } else if ($("#g").val() === "X" && $("#h").val() === "X" && $("#i").val() === "X") {
+            console.log("X WIN");
+            gameOver();
+        } else if ($("#g").val() === "O" && $("#h").val() === "O" && $("#i").val() === "O") {
+            console.log("O WIN");
+            gameOver();
 
             // column
 
-            } else if ($("#1").val() === "X" && $("#4").val() === "X" && $("#7").val() === "X") {
-                console.log("X WIN");
-                gameOver();
-            } else if ($("#1").val() === "O" && $("#4").val() === "O" && $("#7").val() === "O") {
-                console.log("O WIN");
-                gameOver();
-            } else if ($("#2").val() === "X" && $("#5").val() === "X" && $("#8").val() === "X") {
-                console.log("X WIN");
-                gameOver();
-            } else if ($("#2").val() === "O" && $("#5").val() === "O" && $("#8").val() === "O") {
-                console.log("O WIN");
-                gameOver();
-            } else if ($("#3").val() === "X" && $("#6").val() === "X" && $("#9").val() === "X") {
-                console.log("X WIN");
-                gameOver();
-            } else if ($("#3").val() === "O" && $("#6").val() === "O" && $("#9").val() === "O") {
-                console.log("O WIN");
-                gameOver();
-            
+        } else if ($("#a").val() === "X" && $("#d").val() === "X" && $("#g").val() === "X") {
+            console.log("X WIN");
+            gameOver();
+        } else if ($("#a").val() === "O" && $("#d").val() === "O" && $("#g").val() === "O") {
+            console.log("O WIN");
+            gameOver();
+        } else if ($("#b").val() === "X" && $("#e").val() === "X" && $("#h").val() === "X") {
+            console.log("X WIN");
+            gameOver();
+        } else if ($("#b").val() === "O" && $("#e").val() === "O" && $("#h").val() === "O") {
+            console.log("O WIN");
+            gameOver();
+        } else if ($("#c").val() === "X" && $("#f").val() === "X" && $("#i").val() === "X") {
+            console.log("X WIN");
+            gameOver();
+        } else if ($("#c").val() === "O" && $("#f").val() === "O" && $("#i").val() === "O") {
+            console.log("O WIN");
+            gameOver();
+
 
             // diagonal
 
-            } else if ($("#1").val() === "X" && $("#5").val() === "X" && $("#9").val() === "X") {
-                console.log("X WIN");
-                gameOver();
-            } else if ($("#1").val() === "O" && $("#5").val() === "O" && $("#9").val() === "O") {
-                console.log("O WIN");
-                gameOver();
-            } else if ($("#3").val() === "X" && $("#5").val() === "X" && $("#7").val() === "X") {
-                console.log("X WIN");
-                gameOver();
-            } else if ($("#3").val() === "O" && $("#5").val() === "O" && $("#7").val() === "O") {
-                console.log("O WIN");
-                gameOver();
-            } 
-
+        } else if ($("#a").val() === "X" && $("#e").val() === "X" && $("#i").val() === "X") {
+            console.log("X WIN");
+            gameOver();
+        } else if ($("#a").val() === "O" && $("#e").val() === "O" && $("#i").val() === "O") {
+            console.log("O WIN");
+            gameOver();
+        } else if ($("#c").val() === "X" && $("#e").val() === "X" && $("#g").val() === "X") {
+            console.log("X WIN");
+            gameOver();
+        } else if ($("#c").val() === "O" && $("#e").val() === "O" && $("#g").val() === "O") {
+            console.log("O WIN");
+            gameOver();
+        }
 
         function gameOver() {
             $("input[type='text']").attr("disabled", true);
