@@ -14,7 +14,6 @@ body {
     font-size: 2em;
 }
 
-
 /* SET UP */
 
 .inline {
@@ -35,7 +34,7 @@ input[name="playerValue"]:checked+span {
     color: rgb(59, 20, 91);
 }
 
-button {
+#startBtn {
     position: relative;
     top: 34px;
     left: 30px;
@@ -52,7 +51,6 @@ button:focus {
     outline: none;
 }
 
-
 /* BOARD */
 
 .board {
@@ -65,6 +63,20 @@ button:focus {
     table-layout: fixed;
     line-height: 45px;
     display: none;
+}
+
+#resetBtn {
+    border: 2px solid rgb(58, 41, 65);
+    border-radius: 10px;
+    width: 125px;
+    height: 45px;
+    margin: 0 auto;
+    margin-top: 20px;
+    display: none;
+    background-color: #f2f2f2;
+    font-size: 1em;
+    cursor: pointer;
+    
 }
 
 input[type="text"] {
@@ -106,3 +118,4 @@ input[type="text"]:active {
 #i {
     border-bottom: none;
 }
+
