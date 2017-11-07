@@ -23,7 +23,6 @@ $(document).ready(function () {
             id.val(user).attr("disabled", true);
             let uIndex = arr.indexOf(this.id); // user index to splice picked cell from array.
             arr.splice(uIndex, 1);
-            player = bot;
         }
 
         if (win(user) === false) {
@@ -37,13 +36,13 @@ $(document).ready(function () {
                 let bIndex = arr.indexOf(arr[random]);
                 arr.splice(bIndex, 1);
             }, 500);
-            player = user;
         }
 
-        if (arr.length == 0 && win() === false) {
+        if (arr.length === 0 && win() === false) {
+            win(user);
             gameOver();
+            $("#tieGame").fadeIn(300);
             console.log("TIE");
-            $("#tieGame").fadeToggle(100, "linear");
         }
     }
 
@@ -116,7 +115,10 @@ $(document).ready(function () {
         for (var i = 0; i < arr.length; i++) {
             $("#" + arr[i]).val("");
             $("#" + arr[i]).attr("disabled", false);
+            $("#tieGame").fadeOut(200);
             resetBtn.fadeOut(200);
+            $(".board").css("padding-bottom", "10px");
+            
         }
     }
 
@@ -124,7 +126,8 @@ $(document).ready(function () {
         $("input[type='text']").attr("disabled", true);
 
         setTimeout(function () {
-            $("#resetBtn").fadeIn(400);
+            $("#resetBtn").fadeIn(300);
+            $(".board").css("padding-bottom", "80px");
         }, 300);
 
         resetBtn.click(reset);

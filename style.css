@@ -8,25 +8,28 @@ body {
     font-size: 16px;
     font-family: 'Open Sans', sans-serif;
     line-height: 0;
-}
-
-.setUp {
-    position: relative;
-    top: 200px;
-    height: 100px;
-    width: 400px;
-    margin: 0 auto;
-    text-align: center;
-    font-size: 2em;
+    background-color: rgb(36, 36, 54);
 }
 
 /* SET UP */
 
+.setUp {
+    position: relative;
+    top: 180px;
+    height: 300px;
+    width: 400px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 2em;
+    border-radius: 20px;
+    background: rgba(224, 224, 224, 0.9);
+}
+
+
 .inline {
     position: relative;
-    top: 40px;
-    display: inline;
-    text-align: right;
+    top: 110px;
+    left: -20px;
     padding: 0 20px;
 }
 
@@ -37,19 +40,35 @@ input[name="playerValue"] {
 }
 
 input[name="playerValue"]:checked+span {
-    color: rgb(59, 20, 91);
+    color: rgb(100, 4, 4);
 }
 
 #startBtn {
     position: relative;
-    top: 34px;
-    left: 30px;
-    border: 2px solid #000;
+    top: 120px;
+    left: 5px;
+    width: 200px;
+    border: 1px dotted #000;
     border-radius: 10px;
     padding: 10px 20px;
     font-size: .5em;
     background-color: #f2f2f2;
     cursor: pointer;
+    transition-duration: 150ms;
+}
+
+#startBtn:hover {
+    background-color: rgba(32, 32, 32, 0.8);
+    color: #f2f2f2;
+    transition-duration: 150ms;
+}
+
+#welcomeMsg {
+    position: absolute;
+    top: 60px;
+    left: 10px;
+    text-align: center;
+    width: 100%;
 }
 
 button:active,
@@ -61,14 +80,17 @@ button:focus {
 
 .board {
     margin: 0 auto;
+    padding: 60px 45px 10px 45px;
     position: relative;
-    top: 40px;
+    top: 140px;
     width: 400px;
     height: 400px;
     text-align: center;
     table-layout: fixed;
     line-height: 45px;
     display: none;
+    background-color: rgba(255, 255, 255, .7);
+    border-radius: 20px;
 }
 
 #resetBtn {
@@ -89,12 +111,13 @@ input[type="text"] {
     display: inline-block;
     width: 33%;
     height: 30%;
-    padding: 0;
     margin: -9px;
+    margin-left: -3px;
     font-size: 8em;
     text-align: center;
-    border: 4px solid rgb(58, 41, 65);
     cursor: pointer;
+    border: 4px solid rgb(58, 41, 65);
+    background-color: rgba(0, 0, 0, 0);
 }
 
 input[type="text"]:active {
@@ -132,15 +155,15 @@ input[type="text"]:disabled {
 /* TIE GAME */
 
 #tieGame {
-    position: fixed;
-    top: 180px;
-    left: 270px;
+    position: absolute;
+    top: 190px;
+    left: 100px;
     width: 300px;
     padding: 20px 0;
     font-size: 3em;
     color: #f7c3c3;
     text-align: center;
-    background-color: rgba(32, 32, 32, 0.8);
+    background-color: rgba(32, 32, 32, 0.97);
     border-radius: 10px;
     display: none;
 }
