@@ -146,6 +146,9 @@ $(document).ready(function () {
                 $("#resetBtn").fadeIn(400);
             }, 300);
 
+            resetBtn.click(reset);
+            
+
         }
 
         return false;
