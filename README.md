@@ -3,7 +3,7 @@
 -----
 ## To-do/Known bugs
 * ~~Allow user to pick X or O~~
-* Clean up win();
+* ~~Clean up win();~~
 * Clean up code
 * Add animation for visual appeal
 * Change color of winning line
@@ -13,3 +13,5 @@
 * ~~disable input box after it's been filled~~
 * ~~Add reset button~~
 * disable game when bot wins
+* ~~edit reset button function -- button doesn't show when no winner is declared.~~
+* There is a lag bug when bot wins.

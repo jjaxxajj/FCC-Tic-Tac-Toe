@@ -129,3 +129,19 @@ input[type="text"]:disabled {
     border-bottom: none;
 }
 
+/* TIE GAME */
+
+#tieGame {
+    position: fixed;
+    top: 180px;
+    left: 270px;
+    width: 300px;
+    padding: 20px 0;
+    font-size: 3em;
+    color: #f7c3c3;
+    text-align: center;
+    background-color: rgba(32, 32, 32, 0.8);
+    border-radius: 10px;
+    display: none;
+}
+
