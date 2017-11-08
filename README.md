@@ -12,6 +12,6 @@
 * ~~Add reset button~~
 * ~~edit reset button function -- button doesn't show when no winner is declared.~~
 * Fix bug that lags when declaring bot as winner.
-  * There's also a bug that declares a TIE...
+  * ~~There's also a bug that declares a TIE...~~
 * ~~Style it~~
 
