@@ -1,5 +1,7 @@
 ## FCC: Tic-Tac-Toe Game
 ### [Advanced Front End Development Project]
+
+A working sample can be found on CodePen by clicking [here](https://codepen.io/jjaxx/pen/qVavXJ)!
 -----
 ## To-do/Known bugs
 * ~~Allow user to pick X or O~~
